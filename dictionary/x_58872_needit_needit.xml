@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request type" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human resources" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="1" value="facilities"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
+                <element inactive_on_update="false" label="House keeping" sequence="3" value="house keeping"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="onsite_travel" label="What needed" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Employee onboarding" sequence="0" value="employee_onboarding"/>
+                <element inactive_on_update="false" label="Exit formalities" sequence="1" value="exit"/>
+                <element inactive_on_update="false" label="Onsite travel" sequence="2" value="onsite_travel"/>
+                <element inactive_on_update="false" label="Issue foreign currency" sequence="3" value="foreign_currency"/>
+                <element inactive_on_update="false" label="Notepad request" sequence="4" value="notepad"/>
+                <element inactive_on_update="false" label="Projector issue" sequence="5" value="projector"/>
+                <element inactive_on_update="false" label="Cleaning" sequence="6" value="cleaning"/>
+            </choice>
+        </element>
+        <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
